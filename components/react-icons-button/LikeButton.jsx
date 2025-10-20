@@ -79,7 +79,7 @@ const LikeButton = ({
 			{!isLiked && (
 				<FaRegHeart className="mr-1 hover:text-red-500 hover:cursor-pointer" />
 			)}
-			{likesCount}
+			{likesCounts}
 		</span>
 	);
 };
