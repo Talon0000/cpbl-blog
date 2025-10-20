@@ -15,7 +15,6 @@ const LikeButton = ({
 }) => {
 	const [isLiked, setIsLiked] = useState(isLikedInitial);
 	const [likesCounts, setLikesCounts] = useState(likesCount);
-	const [isHovered, setIsHovered] = useState(false);
 	const [providers, setProviders] = useState(null);
 	const { data: session } = useSession();
 
@@ -66,18 +65,17 @@ const LikeButton = ({
 
 	return (
 		<span
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
 			onClick={(e) => {
 				e.preventDefault();
 				e.stopPropagation();
 				handleLike();
 			}}
 			className={`flex w-fit mx-auto justify-center items-center ${textSize}`}>
-			{isLiked && !isHovered && <FaHeart className="mr-1 text-red-500 " />}
-			{isLiked && isHovered && <FaRegHeart className="mr-1 hover:cursor-pointer" />}
+			{isLiked && (
+				<FaHeart className="mr-1 text-red-500 hover:scale-110 transition-transform duration-200 hover:cursor-pointer" />
+			)}
 			{!isLiked && (
-				<FaRegHeart className="mr-1 hover:text-red-500 hover:cursor-pointer" />
+				<FaRegHeart className="mr-1 hover:text-red-500 hover:scale-110 transition-transform duration-200 hover:cursor-pointer" />
 			)}
 			{likesCounts}
 		</span>
