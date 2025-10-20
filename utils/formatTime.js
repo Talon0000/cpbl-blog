@@ -5,6 +5,7 @@ const formatTime = (data) => {
 		day: "2-digit",
 		hour: "2-digit",
 		minute: "numeric",
+		timeZone: "Asia/Taipei",
 	});
 };
 
