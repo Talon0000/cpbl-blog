@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hamburger Menu */
+.hamburger {
+	width: 24px;
+	height: 24px;
+	transition: all 0.25s;
+	position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+	position: absolute;
+	width: 24px;
+	height: 2px;
+	top: 0px;
+	left: 0px;
+	background: #fff;
+	transform: rotate(0);
+	transition: all 0.5s;
+}
+
+.hamburger-middle {
+	transform: translateY(7px);
+}
+
+.hamburger-bottom {
+	transform: translateY(14px);
+}
+
+.open {
+	transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+	transform: rotate(45deg) translateY(8px) translateX(8px);
+}
+
+.open .hamburger-middle {
+	display: none;
+}
+
+.open .hamburger-bottom {
+	transform: rotate(-45deg) translateY(8px) translateX(-8px);
+}
+
+/* 圖片輪播按鈕 */
+.swiper-button-prev,
+.swiper-button-next {
+	@apply text-gray-300 hover:scale-110 transition-all duration-200 !important;
+}
+
+.swiper-pagination-bullet-active {
+	@apply bg-green-700 !important;
+}
+
+/* React Toast 字體 */
+.Toastify__toast {
+	font-size: 14px; /* 調整整個 toast 字體大小 */
+	font-weight: 500; /* 字重 */
+}

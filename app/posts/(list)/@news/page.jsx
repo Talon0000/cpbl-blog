@@ -1,0 +1,42 @@
+import findPosts from "../../../actions/findPosts";
+import converToSerializableObject from "@/utils/converToSerializableObject";
+import NewsCard from "@/components/postsCard/NewsCard";
+import countTotalPages from "@/app/actions/countTotalPostsPages";
+import Pagination from "@/components/Pagination";
+
+const NewsPage = async ({ searchParams }) => {
+	const { newsPage = 1 } = await searchParams;
+
+	const pageSize = 5;
+	const pageGroupSize = 10;
+
+	const skip = Math.max(0, (newsPage - 1) * pageSize);
+	const newsDocs = await findPosts("news", "createdAt", pageSize, skip);
+	const totalPages = await countTotalPages("news", pageSize);
+	const newsPosts = converToSerializableObject(newsDocs);
+
+	return (
+		<section id="newsPage-section" className="max-w-8xl mx-auto px-10 py-6">
+			<h2 className="text-4xl boder py-4 border-b-2 mb-6">賽事新聞</h2>
+			<div className="flex flex-col space-y-2">
+				{newsPosts.length > 0 ? (
+					newsPosts.map((newsPost) => (
+						<NewsCard key={newsPost._id} news={newsPost} />
+					))
+				) : (
+					<p>暫無新聞可顯示</p>
+				)}
+			</div>
+			{newsPosts.length > 0 && (
+				<Pagination
+					queryKey={"newsPage"}
+					pageGroupSize={pageGroupSize}
+					totalPages={totalPages}
+					toSection="newsPage-section"
+				/>
+			)}
+		</section>
+	);
+};
+
+export default NewsPage;
