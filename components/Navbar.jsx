@@ -142,7 +142,11 @@ const Navbar = () => {
 										className="text-black tracking-wider hover:bg-gray-200 hover:text-green-700 rounded-b-md pr-24 pb-2 pt-1"
 										onClick={() => {
 											setIsProfileMenuOpen(false);
-											signOut({ callbackUrl: "/" });
+											signOut({
+												callbackUrl: `${
+													process.env.NEXT_PUBLIC_DOMAIN || window.location.origin
+												}/`,
+											});
 										}}>
 										登出
 									</button>
