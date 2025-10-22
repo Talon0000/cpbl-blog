@@ -145,7 +145,7 @@ const Navbar = () => {
 											signOut({
 												callbackUrl: `${
 													process.env.NEXT_PUBLIC_DOMAIN || window.location.origin
-												}/`,
+												}`,
 											});
 										}}>
 										登出
