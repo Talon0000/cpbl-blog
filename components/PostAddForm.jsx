@@ -6,16 +6,18 @@ import { postFormSchema } from "@/lib/validators";
 import addPost from "@/app/actions/addPost";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const PostAddForm = () => {
 	const router = useRouter();
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const {
 		register,
 		setValue,
 		watch,
 		handleSubmit,
-		formState: { errors, isSubmitting },
+		formState: { errors },
 	} = useForm({
 		resolver: zodResolver(postFormSchema),
 		defaultValues: { teams: [] },
@@ -33,10 +35,11 @@ const PostAddForm = () => {
 
 	//File類型沒辦法透過data傳給server action要透過FormData
 	const onSubmit = async (data, e) => {
-		const formElement = e.target;
-		const formData = new FormData(formElement);
-
+		setIsSubmitting(true);
 		try {
+			const formElement = e.target;
+			const formData = new FormData(formElement);
+
 			const savedPost = await addPost(formData);
 
 			router.push(`/posts/${savedPost._id}`);
@@ -46,6 +49,8 @@ const PostAddForm = () => {
 			toast.error(
 				`${savedPost.type === "news" ? "新聞" : "討論"}新增失敗，請稍後再試！`
 			);
+		} finally {
+			setIsSubmitting(false);
 		}
 	};
 
