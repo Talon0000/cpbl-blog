@@ -44,7 +44,7 @@ const PostAddForm = () => {
 
 			router.push(`/posts/${savedPost._id}`);
 			toast.success(`${savedPost.type === "news" ? "新聞" : "討論"}新增成功！`);
-			await new Promise((resolve) => setTimeout(resolve, 5000));
+			await new Promise((resolve) => setTimeout(resolve, 4000));
 		} catch (error) {
 			console.error("新增文章失敗: ", error);
 			toast.error(
