@@ -140,12 +140,11 @@ const Navbar = () => {
 									</Link> */}
 									<button
 										className="text-black tracking-wider hover:bg-gray-200 hover:text-green-700 rounded-b-md pr-24 pb-2 pt-1"
-										onClick={async () => {
+										onClick={() => {
 											setIsProfileMenuOpen(false);
-											await signOut({
-												redirect: false,
+											signOut({
+												callbackUrl: `${process.env.NEXT_PUBLIC_DOMAIN || "/"}`,
 											});
-											window.location.href = "/";
 										}}>
 										登出
 									</button>
