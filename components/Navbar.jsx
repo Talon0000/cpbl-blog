@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Navbar = () => {
-	const { data: session, status } = useSession();
+	const { data: session } = useSession();
 	const profileImage = session?.user?.image;
 
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,11 +18,6 @@ const Navbar = () => {
 	const [providers, setProviders] = useState(null);
 
 	const pathname = usePathname();
-
-	if (status === "loading") {
-		// 還在確認中，不要顯示登入或登出按鈕
-		return null;
-	}
 
 	useEffect(() => {
 		const setAuthProviders = async () => {
