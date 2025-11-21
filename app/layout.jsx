@@ -6,6 +6,8 @@ import AuthProvider from "@/components/AuthProvider";
 import { ToastContainer, Bounce } from "react-toastify";
 //import "react-toastify/dist/ReactToastify.css";
 
+export const dynamic = "force-dynamic";
+
 const notosans = Noto_Sans_TC({
 	subsets: ["latin"],
 });
