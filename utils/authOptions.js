@@ -71,7 +71,8 @@ export const authOptions = {
 				httpOnly: true,
 				sameSite: "lax",
 				path: "/",
-				secure: process.env.NODE_ENV === "production", // production 要用 https
+				domain: "cpbl-blog.vercel.app", // 指定 domain
+				secure: true,
 			},
 		},
 	},
