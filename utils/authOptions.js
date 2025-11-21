@@ -71,8 +71,7 @@ export const authOptions = {
 				httpOnly: true,
 				sameSite: "lax",
 				path: "/",
-				domain: "cpbl-blog.vercel.app", // 指定 domain
-				secure: true,
+				secure: process.env.NODE_ENV === "production",
 			},
 		},
 	},
