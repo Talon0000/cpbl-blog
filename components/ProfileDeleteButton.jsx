@@ -7,54 +7,6 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
-// async function handleDeletePost(
-// 	post,
-// 	startDate,
-// 	endDate,
-// 	newsPage,
-// 	discussionPage,
-// 	params,
-// 	router
-// ) {
-// 	if (isDeleting) return;
-// 	const newsPageSize = 4;
-// 	const discussionPageSize = 4;
-
-// 	const confirmed = window.confirm("確定要刪除該貼文嗎？");
-
-// 	if (!confirmed) return;
-// setIsDeleting(true)
-// 	try {
-// 		await deletePost(post._id);
-
-// 		const { postsAmounts } = await findCountProfilePosts(
-// 			post.type,
-// 			"createdAt",
-// 			startDate,
-// 			endDate
-// 		);
-
-// 		if (post.type === "news") {
-// 			const totalPages = Math.ceil(postsAmounts / newsPageSize);
-// 			if (totalPages < newsPage) {
-// 				params.set("newsPage", totalPages);
-// 				router.replace(`?${params.toString()}#profileNews`);
-// 			}
-// 		} else {
-// 			const totalPages = Math.ceil(postsAmounts / discussionPageSize);
-// 			if (totalPages < discussionPage) {
-// 				params.set("discussionPage", totalPages);
-// 				router.replace(`?${params.toString()}#profileDiscussions`);
-// 			}
-// 		}
-
-// 		toast.success(`${post.type === "news" ? "新聞" : "討論"}刪除成功！`);
-// 	} catch (error) {
-// 		console.error("刪除文章失敗: ", error);
-// 		toast.error(`${post.type === "news" ? "新聞" : "討論"}刪除失敗，請稍後再試！`);
-// 	}
-// }
-
 export default function ProfileDeleteButton({ post }) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
