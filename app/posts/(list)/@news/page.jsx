@@ -17,7 +17,7 @@ const NewsPage = async ({ searchParams }) => {
 
 	return (
 		<section id="newsPage-section" className="max-w-8xl mx-auto px-10 py-6">
-			<h2 className="text-4xl boder py-4 border-b-2 mb-6">賽事新聞</h2>
+			<h2 className="text-3xl md:text-4xl py-4 border-b-2 mb-6">賽事新聞</h2>
 			<div className="flex flex-col space-y-2">
 				{newsPosts.length > 0 ? (
 					newsPosts.map((newsPost) => (

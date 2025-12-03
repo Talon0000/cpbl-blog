@@ -13,7 +13,8 @@ const ErrorPage = ({ error }) => {
 						<h1 className="text-3xl font-semibold mt-4 mb-2 tracking-wider">
 							出了點問題
 						</h1>
-						<p className="text-gray-500 text-xl mb-10">{error.toString()}</p>
+						{/* <p className="text-gray-500 text-xl mb-10">{error.toString()}</p> */}
+						<p className="text-gray-500 text-xl mb-10">發生錯誤，請稍後再試。</p>
 						<Link
 							href="/"
 							className="bg-green-700 hover:bg-green-900 text-lg text-white font-semibold py-4 px-6 rounded">

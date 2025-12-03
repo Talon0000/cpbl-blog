@@ -54,7 +54,7 @@ export const authOptions = {
 			}
 			return token;
 		},
-		// Session callback function that modifies the session object
+
 		async session({ session, token }) {
 			session.user.id = token.id;
 			session.user.username = token.username;

@@ -27,7 +27,7 @@ const CommentsList = async ({ postId, commentPage }) => {
 					queryKey={"commentPage"}
 					totalPages={totalPages}
 					pageGroupSize={10}
-					toSection="true"
+					toSection="commentPage-section"
 				/>
 			)}
 		</div>

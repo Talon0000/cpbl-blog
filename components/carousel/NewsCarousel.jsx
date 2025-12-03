@@ -10,7 +10,7 @@ import NewsCarouselCard from "./NewsCarouselCard";
 const NewsCarousel = ({ posts }) => {
 	return (
 		<section className="bg-white mx-auto max-w-6xl px-4 py-6">
-			<h1 className="text-2xl tracking-wide text-gray-700 md:text-4xl text-center font-semibold">
+			<h1 className="text-3xl tracking-wide text-gray-700 md:text-4xl text-center font-semibold">
 				近期賽事新聞
 			</h1>
 			<Swiper

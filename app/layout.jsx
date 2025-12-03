@@ -38,7 +38,6 @@ export default function RootLayout({ children }) {
 						closeOnClick
 						rtl={false}
 						pauseOnFocusLoss={false}
-						draggable
 						pauseOnHover={false}
 						theme="colored"
 						transition={Bounce}

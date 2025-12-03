@@ -8,7 +8,7 @@ const NewsCarouselCard = ({ post }) => {
 		<div className="rounded-xl shadow-md max-w-3xl mx-auto flex flex-col hover:scale-105 transition-transform duration-300">
 			<Link href={`/posts/${post._id}`}>
 				<Image
-					src={post.images.length > 0 ? `${post.images[0]}` : defaultImage}
+					src={post.images.length > 0 ? post.images[0] : defaultImage}
 					alt="home-image"
 					className="rounded-t-xl w-full lg:h-[500px] object-cover"
 					sizes="100vw"

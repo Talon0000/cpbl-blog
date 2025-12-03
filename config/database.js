@@ -12,7 +12,6 @@ const connectDB = async () => {
 	}
 
 	if (process.env.NODE_ENV === "production" && !process.env.MONGODB_URI) {
-		// build 階段跳過
 		return;
 	}
 

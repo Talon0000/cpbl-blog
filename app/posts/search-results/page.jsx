@@ -1,4 +1,3 @@
-import connectDB from "@/config/database";
 import PostSearchForm from "@/components/PostSearchForm";
 import DiscussionsSearchResults from "@/components/searchResults/DiscussionsSearchResults";
 import NewsSearchResults from "@/components/searchResults/NewsSearchResults";
@@ -8,7 +7,6 @@ export const metadata = {
 };
 
 const SearchResultsPage = async ({ searchParams }) => {
-	await connectDB();
 	const {
 		keyword,
 		team,
@@ -30,12 +28,12 @@ const SearchResultsPage = async ({ searchParams }) => {
 		query.teams = team;
 	}
 
-	//console.log("搜尋條件:", query);
+	// console.log("搜尋條件:", query);
 
 	if (type === "news") {
 		return (
 			<>
-				<section className="bg-green-900 px-4 py-4">
+				<section className="bg-green-900 px-4 py-4 pb-6">
 					<div className="px-8 md:px-14">
 						<PostSearchForm />
 					</div>
@@ -47,7 +45,7 @@ const SearchResultsPage = async ({ searchParams }) => {
 
 	return (
 		<>
-			<section className="bg-green-900 px-4 py-4">
+			<section className="bg-green-900 px-4 py-4 pb-6">
 				<div className="px-8 md:px-14">
 					<PostSearchForm />
 				</div>

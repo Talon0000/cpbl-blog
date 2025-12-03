@@ -3,6 +3,7 @@ import converToSerializableObject from "@/utils/converToSerializableObject";
 import { getSessionUser } from "@/utils/getSessionUser";
 import Comments from "@/components/Comments";
 import MainContent from "@/components/MainContent";
+import { notFound } from "next/navigation";
 
 const PostPage = async ({ params, searchParams }) => {
 	const { postId } = await params;
@@ -12,6 +13,10 @@ const PostPage = async ({ params, searchParams }) => {
 	const post = converToSerializableObject(postDocs);
 
 	const session = await getSessionUser();
+
+	if (!postDocs) {
+		notFound();
+	}
 
 	return (
 		<>

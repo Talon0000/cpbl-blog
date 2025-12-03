@@ -30,10 +30,10 @@ const DiscussionCard = async ({ discussion }) => {
 						{discussion.author.username}
 					</p>
 					<p className="text-gray-300 text-sm sm:text-base lg:text-lg">
-						貼文日期: {formatted(discussion.createdAt)}
+						{formatted(discussion.createdAt)}
 					</p>
 				</div>
-				<div className="flex space-x-4 text-lg">
+				<div className="flex space-x-4 ">
 					<LikeButton
 						isLikedInitial={isLiked}
 						likesCount={discussion.likesCount}

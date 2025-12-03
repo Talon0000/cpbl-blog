@@ -14,12 +14,6 @@ const UserSchema = new Schema(
 		image: {
 			type: String,
 		},
-		bookmarks: [
-			{
-				type: Schema.Types.ObjectId,
-				ref: "Posts",
-			},
-		],
 	},
 	{
 		timestamps: true,

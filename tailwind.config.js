@@ -8,8 +8,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Noto Sans TC", "sans - serif"],
-				weight: ["400", "700"],
+				sans: ["Noto Sans TC", "sans-serif"],
 			},
 		},
 	},

@@ -3,11 +3,13 @@
 import Image from "next/image";
 import logo from "@/assets/images/logo.svg";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaGoogle } from "react-icons/fa";
 import defaultProfileImage from "@/assets/images/profile.png";
 import { usePathname } from "next/navigation";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { MdLogout } from "react-icons/md";
+import { ImProfile } from "react-icons/im";
 
 const Navbar = () => {
 	const { data: session } = useSession();
@@ -18,6 +20,18 @@ const Navbar = () => {
 	const [providers, setProviders] = useState(null);
 
 	const pathname = usePathname();
+	const menuRef = useRef(null);
+
+	useEffect(() => {
+		function handleClickOutside(e) {
+			if (menuRef.current && !menuRef.current.contains(e.target)) {
+				setIsProfileMenuOpen(false);
+			}
+		}
+
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
+	}, []);
 
 	useEffect(() => {
 		const setAuthProviders = async () => {
@@ -30,15 +44,13 @@ const Navbar = () => {
 	return (
 		<nav className="border-b border-green-50 text-white bg-green-900">
 			<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-4">
-				<div className="relative flex items-center justify-between ">
+				<div className="relative flex items-center">
 					{/* <!-- Hamburger Button --> */}
-					<div className="absolute left-1  md:hidden">
+					<div className="absolute left-1 md:hidden">
 						<button
 							id="menu-btn"
 							type="button"
-							className={`${
-								isMobileMenuOpen ? "open" : ""
-							} hamburger focus:outline-none`}
+							className={`${isMobileMenuOpen ? "open" : ""} hamburger `}
 							onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
 							<span className=" hamburger-top"></span>
 							<span className=" hamburger-middle"></span>
@@ -51,12 +63,12 @@ const Navbar = () => {
 						<Link href="/" className="flex h-[64px] items-center ">
 							<Image
 								src={logo}
-								className="relative top-1"
+								className="mt-2"
 								alt="logo"
 								width={100}
 								height={100}
 							/>
-							<span className="hidden md:block tracking-wide text-4xl font-semibold text-gray-50 ">
+							<span className="hidden md:block tracking-wider text-4xl font-semibold text-gray-50 ">
 								CPBL社群平台
 							</span>
 						</Link>
@@ -90,33 +102,34 @@ const Navbar = () => {
 					</div>
 					{/* Right side menu (logged out)*/}
 					{!session && (
-						<div className="ml-2">
+						<div className="absolute right-1 flex items-center ">
 							{providers &&
 								Object.values(providers).map((provider, index) => (
 									<button
 										key={index}
 										onClick={() => signIn(provider.id)}
 										type="button"
-										className=" flex items-center bg-gray-700 rounded-lg px-4 py-3 hover:bg-gray-400 ">
+										className=" flex items-center bg-gray-700 rounded-lg px-3 py-2 hover:bg-gray-400 ">
 										<FaGoogle className="mr-1" />
-										<span className="tracking-wide">登入 或 註冊</span>
+										<span className="tracking-wider">註冊 或 登入</span>
 									</button>
 								))}
 						</div>
 					)}
 					{/* Right side menu (logged in) */}
 					{session && (
-						<div className="absolute right-0 flex items-center mr-2 sm:mr-0 ">
+						<div className="absolute right-1" ref={menuRef}>
 							{/* Profile dropdown button */}
 
 							<button
 								type="button"
 								id="user-menu-button"
-								className="relative rounded-full focus:ring-2 ring-gray-400"
+								className=" rounded-full focus:ring-2 ring-gray-400"
+								// onBlur={() => setIsProfileMenuOpen(false)}
 								onClick={() => setIsProfileMenuOpen((prev) => !prev)}>
 								<Image
 									src={profileImage || defaultProfileImage}
-									alt="default profile image"
+									alt="profile image"
 									className="rounded-full"
 									height={40}
 									width={40}
@@ -128,8 +141,9 @@ const Navbar = () => {
 								<div className="absolute flex flex-col right-0 top-12 w-40 text-sm rounded-md bg-white shadow-lg focus:outline-none">
 									<Link
 										href="/profile"
-										className="text-black tracking-wider hover:bg-gray-200 hover:text-green-700 rounded-t-md pl-4 pt-2 pb-1"
+										className="flex items-center text-black tracking-wider hover:bg-gray-200 hover:text-green-700 rounded-t-md pl-4 pt-2 pb-1"
 										onClick={() => setIsProfileMenuOpen(false)}>
+										<ImProfile className="mr-1" />
 										個人檔案
 									</Link>
 									{/* <Link
@@ -139,13 +153,14 @@ const Navbar = () => {
 										收藏貼文
 									</Link> */}
 									<button
-										className="text-black tracking-wider hover:bg-gray-200 hover:text-green-700 rounded-b-md pr-24 pb-2 pt-1"
+										className="flex items-center text-black tracking-wider hover:bg-gray-200 hover:text-green-700 rounded-b-md pl-4 pb-2 pt-1"
 										onClick={() => {
 											setIsProfileMenuOpen(false);
 											signOut({
-												callbackUrl: `${process.env.NEXT_PUBLIC_DOMAIN || "/"}`,
+												callbackUrl: process.env.NEXT_PUBLIC_DOMAIN || "/",
 											});
 										}}>
+										<MdLogout className="mr-1" />
 										登出
 									</button>
 								</div>
@@ -167,7 +182,7 @@ const Navbar = () => {
 						onClick={() => setIsMobileMenuOpen(false)}
 						className={`${
 							pathname === "/" ? "bg-gray-300 text-green-700" : ""
-						} hover:bg-gray-300 rounded-lg hover:text-green-700 block mx-1 px-3 py-2 text-xl`}>
+						} hover:bg-gray-300 rounded-lg hover:text-green-700 block mx-3 px-3 py-2 text-lg sm:text-xl`}>
 						主頁
 					</Link>
 					<Link
@@ -175,7 +190,7 @@ const Navbar = () => {
 						onClick={() => setIsMobileMenuOpen(false)}
 						className={`${
 							pathname === "/posts" ? "bg-gray-300 text-green-700" : ""
-						} hover:bg-gray-300 rounded-lg hover:text-green-700 block mx-1 px-3 py-2 text-xl`}>
+						} hover:bg-gray-300 rounded-lg hover:text-green-700 block mx-3 px-3 py-2 text-lg sm:text-xl`}>
 						貼文總覽
 					</Link>
 					{session && (
@@ -184,7 +199,7 @@ const Navbar = () => {
 							onClick={() => setIsMobileMenuOpen(false)}
 							className={`${
 								pathname === "/posts/add" ? "bg-gray-300 text-green-700" : ""
-							} hover:bg-gray-300 rounded-lg hover:text-green-700 block mx-1 px-3 py-2 text-xl`}>
+							} hover:bg-gray-300 rounded-lg hover:text-green-700 block mx-3 px-3 py-2 text-lg sm:text-xl`}>
 							新增貼文
 						</Link>
 					)}
