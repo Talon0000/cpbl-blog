@@ -17,7 +17,9 @@ const ProfileLayout = ({ news, discussions }) => {
 		<section className="bg-emerald-50">
 			<div className="container m-auto py-24">
 				<div className="bg-white px-6 py-8 rounded-md shadow-md border m-4 md:m-0">
-					<h1 className="text-4xl mb-4 text-slate-700">個人檔案</h1>
+					<h1 className="text-4xl mb-4 text-slate-700 text-center md:text-left">
+						個人檔案
+					</h1>
 					<div className="flex flex-col md:flex-row">
 						<div className="px-4 mt-10 mx-auto md:px-0 md:mx-20 w-full md:w-2/6">
 							<div className="mb-4">
@@ -27,14 +29,14 @@ const ProfileLayout = ({ news, discussions }) => {
 									width={0}
 									height={0}
 									sizes="100vw"
-									className="h-32 w-32 md:h-48 md:w-48 mx-auto md:mx-0 rounded-full"
+									className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 mx-auto md:mx-0 rounded-full"
 								/>
 							</div>
-							<h2 className="text-center text-gray-600 md:text-left mb-4 text-2xl">
+							<h2 className="text-center text-gray-600 md:text-left mb-4 text-2xl md:text-xl lg:text-2xl">
 								<span className="">姓名: </span>
 								{sessionUser?.user?.name}
 							</h2>
-							<h2 className="text-center text-gray-600 md:text-left mb-10 text-2xl">
+							<h2 className="text-center text-gray-600 md:text-left mb-10 text-2xl md:text-xl lg:text-2xl">
 								<span className="">Email: </span>
 								{sessionUser?.user?.email}
 							</h2>
@@ -46,6 +48,7 @@ const ProfileLayout = ({ news, discussions }) => {
 							{type === "all" ? (
 								<>
 									<div className="mb-4">{news}</div>
+
 									{discussions}
 								</>
 							) : type === "news" ? (

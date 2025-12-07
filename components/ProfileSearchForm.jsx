@@ -15,12 +15,7 @@ const ProfileSearchForm = () => {
 		const startDate = e.target.startDate.value;
 		const endDate = e.target.endDate.value;
 
-		if (startDate && !endDate) {
-			serError({ date: "請選擇完整的日期範圍" });
-			return;
-		}
-
-		if (!startDate && endDate) {
+		if ((startDate && !endDate) || (!startDate && endDate)) {
 			serError({ date: "請選擇完整的日期範圍" });
 			return;
 		}
@@ -58,7 +53,7 @@ const ProfileSearchForm = () => {
 			<h3 className="text-xl text-center md:text-lg lg:text-left text-gray-600 ">
 				選擇日期範圍
 			</h3>
-			<div className="flex border border-emerald-700 px-3 py-1 rounded-md md:flex-col lg:flex-row md:w-full justify-between sm:justify-evenly md:items-center lg:justify-between">
+			<div className="flex justify-evenly border border-emerald-700 px-3 py-1 rounded-md md:flex-col lg:flex-row md:w-full md:items-center">
 				<input
 					type="date"
 					className="text-lg sm:text-xl md:text-lg focus:outline-none"

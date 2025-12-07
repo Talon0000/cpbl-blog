@@ -29,6 +29,8 @@ export default async function findCountProfilePosts(
 		if (startDate && endDate) {
 			const start = new Date(startDate);
 			const end = new Date(endDate);
+
+			//end只有到當天00:00，要 +1才能抓到當天一整天
 			end.setDate(end.getDate() + 1);
 
 			filter.createdAt = { $gte: start, $lte: end };

@@ -5,7 +5,7 @@ const CommentCard = ({ comment }) => {
 	return (
 		<div className="px-4 py-2 border border-gray-200 rounded-md">
 			<div className="flex justify-between">
-				<div className="flex items-center space-x-1 sm:flex-row md:space-x-2 ">
+				<div className="flex items-center space-x-1 md:space-x-2 ">
 					<Image
 						src={comment.author.image}
 						width={0}

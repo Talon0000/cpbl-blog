@@ -6,7 +6,7 @@ import Pagination from "../Pagination";
 
 const CommentsList = async ({ postId, commentPage }) => {
 	const pageSize = 10;
-	const skip = (commentPage - 1) * pageSize;
+	const skip = Math.max(0, (commentPage - 1) * pageSize);
 	const totalPages = await countTotalCommentsPages(postId, pageSize);
 
 	const commentsDocs = await findComments(postId, pageSize, skip);

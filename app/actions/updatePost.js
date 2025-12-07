@@ -11,7 +11,7 @@ import { postDbSchema } from "@/lib/validators";
 export default async function updatePost(postId, formData) {
 	try {
 		await connectDB();
-		console.log(postId);
+		// console.log(postId);
 		const sessionUser = await getSessionUser();
 		if (!sessionUser || !sessionUser.userId) {
 			throw new Error("User ID is required");
@@ -40,6 +40,7 @@ export default async function updatePost(postId, formData) {
 		const images = formData
 			.getAll("images")
 			.filter((image) => image.name && image.size > 0);
+
 		if (images && images.length > 0) {
 			const publicIds = existingPost.images.map((imageUrl) => {
 				const parts = imageUrl.split("/");

@@ -11,18 +11,18 @@ const MainContent = async ({ post }) => {
 
 	return (
 		<section className="max-w-7xl mx-auto px-4 md:px-10 py-6 mb-10">
-			<h1 className="text-4xl  text-center sm:text-left boder py-4 border-b-2 mb-10">
+			<h1 className="text-4xl  text-center md:text-left py-4 border-b-2 mb-10">
 				{post.type === "news" ? (
 					<Link href="/posts#newsPage-section">賽事新聞</Link>
 				) : (
 					<Link href="/posts#discussionPage-section">討論區</Link>
 				)}
 			</h1>
-			<h2 className="text-2xl md:text-3xl text-green-800 text-center sm:text-left pb-4 tracking-wide border-b border-b-gray-300">
+			<h2 className="text-2xl md:text-3xl text-green-800 text-center md:text-left pb-4 tracking-wide border-b border-b-gray-300">
 				{post.title}
 			</h2>
-			<div className="flex flex-col items-center sm:items-start mb-4">
-				<div className="pt-4 flex flex-col items-center space-y-1 sm:flex-row sm:space-y-0 sm:space-x-2">
+			<div className="flex flex-col items-center md:items-start mb-4">
+				<div className="pt-4 flex flex-col items-center space-y-1 md:flex-row md:space-y-0 md:space-x-2">
 					<Image
 						src={post.author.image}
 						width={50}

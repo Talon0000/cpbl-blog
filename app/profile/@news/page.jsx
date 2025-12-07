@@ -36,12 +36,14 @@ const ProfileNews = async ({ searchParams }) => {
 							<ProfileNewsCard key={n._id} news={n} />
 						))}
 					</div>
-					<Pagination
-						queryKey={"newsPage"}
-						totalPages={totalPages}
-						pageGroupSize={pageGroupSize}
-						toSection="profileNews"
-					/>
+					<div className="-mt-10 mb-10 lg:mt-0">
+						<Pagination
+							queryKey={"newsPage"}
+							totalPages={totalPages}
+							pageGroupSize={pageGroupSize}
+							toSection="profileNews"
+						/>
+					</div>
 				</>
 			)}
 		</>
