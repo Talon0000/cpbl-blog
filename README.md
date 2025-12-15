@@ -17,7 +17,7 @@
 
 ## 🛠 使用技術
 
-Frontend
+**Frontend**
 - React
 - Next.js（App Router）
 - Tailwind CSS
