@@ -6,7 +6,7 @@ import Pagination from "@/components/pagination/Pagination";
 const ProfileDiscussions = async ({ searchParams }) => {
 	const { discussionPage = 1, startDate, endDate } = await searchParams;
 
-	const pageSize = 2;
+	const pageSize = 3;
 	const pageGroupSize = 10;
 	const skip = Math.max(0, (discussionPage - 1) * pageSize);
 
