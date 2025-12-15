@@ -1,6 +1,6 @@
 import findPosts from "@/app/actions/findPosts";
 import converToSerializableObject from "@/utils/converToSerializableObject";
-import DiscussionCard from "./postsCard/DiscussionCard";
+import DiscussionCard from "../postCard/DiscussionCard";
 import Link from "next/link";
 
 const HotDiscussionPosts = async () => {

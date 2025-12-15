@@ -1,4 +1,4 @@
-import PostSearchForm from "./PostSearchForm";
+import PostSearchForm from "../postForm/PostSearchForm";
 
 const Hero = () => {
 	return (

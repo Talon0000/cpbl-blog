@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
-import DiscussionCard from "../postsCard/DiscussionCard";
-import Pagination from "../Pagination";
+import DiscussionCard from "../postCard/DiscussionCard";
+import Pagination from "../pagination/Pagination";
 import findResultPosts from "@/app/actions/findResultPosts";
 import countTotalResultPosts from "@/app/actions/countTotalResultPosts";
 import converToSerializableObject from "@/utils/converToSerializableObject";

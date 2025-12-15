@@ -1,6 +1,6 @@
 //import NewsCard from "@/components/postsCard/NewsCard";
-import ProfileNewsCard from "@/components/postsCard/ProfileNewsCard";
-import Pagination from "@/components/Pagination";
+import ProfileNewsCard from "@/components/postCard/ProfileNewsCard";
+import Pagination from "@/components/pagination/Pagination";
 import findCountProfilePosts from "@/app/actions/findCountProfilePosts";
 
 export const metadata = {

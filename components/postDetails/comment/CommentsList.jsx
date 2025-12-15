@@ -2,7 +2,7 @@ import findComments from "@/app/actions/findComments";
 import converToSerializableObject from "@/utils/converToSerializableObject";
 import countTotalCommentsPages from "@/app/actions/countTotalCommentsPages";
 import CommentCard from "./CommentCard";
-import Pagination from "../Pagination";
+import Pagination from "../../pagination/Pagination";
 
 const CommentsList = async ({ postId, commentPage }) => {
 	const pageSize = 10;

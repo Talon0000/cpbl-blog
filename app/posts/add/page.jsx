@@ -1,4 +1,4 @@
-import PostAddForm from "@/components/PostAddForm";
+import PostAddForm from "@/components/postForm/PostAddForm";
 
 export const metadata = {
 	title: "新增貼文",

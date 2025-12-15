@@ -1,4 +1,4 @@
-import PostSearchForm from "@/components/PostSearchForm";
+import PostSearchForm from "@/components/postForm/PostSearchForm";
 import DiscussionsSearchResults from "@/components/searchResults/DiscussionsSearchResults";
 import NewsSearchResults from "@/components/searchResults/NewsSearchResults";
 

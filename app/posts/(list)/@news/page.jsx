@@ -1,8 +1,8 @@
 import findPosts from "../../../actions/findPosts";
 import converToSerializableObject from "@/utils/converToSerializableObject";
-import NewsCard from "@/components/postsCard/NewsCard";
+import NewsCard from "@/components/postCard/NewsCard";
 import countTotalPages from "@/app/actions/countTotalPostsPages";
-import Pagination from "@/components/Pagination";
+import Pagination from "@/components/pagination/Pagination";
 
 const NewsPage = async ({ searchParams }) => {
 	const { newsPage = 1 } = await searchParams;

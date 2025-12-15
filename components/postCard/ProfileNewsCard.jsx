@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import formatted from "@/utils/formatTime";
 import defaultImage from "@/assets/images/defaultImage.png";
-import ProfileDeleteButton from "../ProfileDeleteButton";
+import ProfileDeleteButton from "../react-icons-button/ProfileDeleteButton";
 import { FaEdit } from "react-icons/fa";
 
 const ProfileNewsCard = ({ news }) => {

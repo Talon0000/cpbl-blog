@@ -1,4 +1,4 @@
-import PostEditForm from "@/components/PostEditForm";
+import PostEditForm from "@/components/postForm/PostEditForm";
 import { findSpecificPost } from "@/app/actions/findSpecificPost";
 import converToSerializableObject from "@/utils/converToSerializableObject";
 

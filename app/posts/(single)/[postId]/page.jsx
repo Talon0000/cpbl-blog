@@ -1,8 +1,8 @@
 import { findSpecificPost } from "@/app/actions/findSpecificPost";
 import converToSerializableObject from "@/utils/converToSerializableObject";
 import { getSessionUser } from "@/utils/getSessionUser";
-import Comments from "@/components/Comments";
-import MainContent from "@/components/MainContent";
+import Comments from "@/components/postDetails/Comments";
+import MainContent from "@/components/postDetails/MainContent";
 import { notFound } from "next/navigation";
 
 const PostPage = async ({ params, searchParams }) => {

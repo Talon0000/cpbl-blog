@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import defaultProfileImage from "@/assets/images/profile.png";
 import Image from "next/image";
-import ProfileSearchForm from "@/components/ProfileSearchForm";
+import ProfileSearchForm from "@/components/postForm/ProfileSearchForm";
 
 const ProfileLayout = ({ news, discussions }) => {
 	const searchParams = useSearchParams();

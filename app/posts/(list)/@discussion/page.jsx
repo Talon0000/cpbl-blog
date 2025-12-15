@@ -1,7 +1,7 @@
 import findPosts from "../../../actions/findPosts";
 import converToSerializableObject from "@/utils/converToSerializableObject";
-import DiscussionCard from "@/components/postsCard/DiscussionCard";
-import Pagination from "@/components/Pagination";
+import DiscussionCard from "@/components/postCard/DiscussionCard";
+import Pagination from "@/components/pagination/Pagination";
 import countTotalPages from "@/app/actions/countTotalPostsPages";
 
 const DiscussionPage = async ({ searchParams }) => {

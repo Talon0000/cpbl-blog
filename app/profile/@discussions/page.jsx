@@ -1,7 +1,7 @@
 import findCountProfilePosts from "@/app/actions/findCountProfilePosts";
 //import DiscussionCard from "@/components/postsCard/DiscussionCard";
-import ProfileDiscussionCard from "@/components/postsCard/ProfileDiscussionCard";
-import Pagination from "@/components/Pagination";
+import ProfileDiscussionCard from "@/components/postCard/ProfileDiscussionCard";
+import Pagination from "@/components/pagination/Pagination";
 
 const ProfileDiscussions = async ({ searchParams }) => {
 	const { discussionPage = 1, startDate, endDate } = await searchParams;

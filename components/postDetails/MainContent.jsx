@@ -2,7 +2,7 @@ import formatTime from "@/utils/formatTime";
 import Image from "next/image";
 import defaultImage from "@/assets/images/defaultImage.png";
 import Link from "next/link";
-import LikeButton from "./react-icons-button/LikeButton";
+import LikeButton from "../react-icons-button/LikeButton";
 import { getSessionUser } from "@/utils/getSessionUser";
 
 const MainContent = async ({ post }) => {
