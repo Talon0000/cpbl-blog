@@ -54,8 +54,6 @@
 
 ---
 
-## 🚀 專案啟動方式
-
-```bash
-npm install
-npm run dev -- -p3001
+## 🔐 環境設定說明
+本專案使用第三方服務（MongoDB Atlas、Google OAuth、NextAuth），
+需搭配私人環境變數才能正常啟動，因此未公開完整啟動設定。
