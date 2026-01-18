@@ -7,14 +7,24 @@ const NewsCarouselCard = ({ post }) => {
 	return (
 		<div className="rounded-xl shadow-md max-w-3xl mx-auto flex flex-col hover:scale-105 transition-transform duration-300">
 			<Link href={`/posts/${post._id}`}>
-				<Image
+				{/* <Image
 					src={post.images.length > 0 ? post.images[0] : defaultImage}
 					alt="home-image"
 					className="rounded-t-xl w-full lg:h-[500px] object-cover"
 					sizes="100vw"
 					height={0}
 					width={0}
-				/>
+				/> */}
+				<div className="w-full aspect-video lg:aspect-none lg:h-[500px] relative overflow-hidden rounded-t-xl">
+					<Image
+						src={post.images.length > 0 ? post.images[0] : defaultImage}
+						alt="home-image"
+						className="object-cover"
+						fill // 使用 fill 填充父層容器
+						sizes="100vw"
+						priority
+					/>
+				</div>
 
 				<div className="flex flex-col px-6 py-4 pb-6 space-y-2">
 					<h1 className="font-semibold text-xl sm:text-2xl  md:tracking-wide lg:text-3xl ">

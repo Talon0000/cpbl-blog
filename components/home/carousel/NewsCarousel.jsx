@@ -13,6 +13,7 @@ const NewsCarousel = ({ posts }) => {
 			<h1 className="text-3xl tracking-wide text-gray-700 md:text-4xl text-center font-semibold">
 				近期賽事新聞
 			</h1>
+
 			<Swiper
 				modules={[Navigation, Pagination, Autoplay]}
 				spaceBetween={0}

@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
 			<html className={notosans.className}>
 				<body>
 					<Navbar />
-					<main>{children}</main>
+					<main className="min-h-screen">{children}</main>
 					<Footer />
 					<ToastContainer
 						position="top-right"

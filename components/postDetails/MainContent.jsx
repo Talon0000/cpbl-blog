@@ -28,7 +28,6 @@ const MainContent = async ({ post }) => {
 						width={50}
 						height={50}
 						className="rounded-full"
-						sizes="100vw"
 						alt="authorAvatar"
 					/>
 					<div className="text-xl">{post.author.username}</div>
@@ -47,6 +46,7 @@ const MainContent = async ({ post }) => {
 					className="w-full"
 				/>
 			)}
+
 			{/* {post.type === "discussion" && post.images.length > 0 ? (
 				<Image
 					src={post.images[0] || defaultImage}
