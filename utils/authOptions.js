@@ -1,10 +1,15 @@
 import GoogleProvider from "next-auth/providers/google";
 import connectDB from "@/config/database";
 import User from "@/models/User";
+import { jwt } from "zod";
 
 export const authOptions = {
 	session: {
 		strategy: "jwt",
+		maxAge: 60 * 60 * 24, // 1 day
+	},
+	jwt: {
+		maxAge: 60 * 60 * 24, // 1 day
 	},
 	providers: [
 		GoogleProvider({
