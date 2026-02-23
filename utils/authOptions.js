@@ -5,10 +5,10 @@ import User from "@/models/User";
 export const authOptions = {
 	session: {
 		strategy: "jwt",
-		maxAge: 10, // 1 day
+		maxAge: 60 * 60 * 24, // 1 day
 	},
 	jwt: {
-		maxAge: 10, // 1 day
+		maxAge: 60 * 60 * 24, // 1 day
 	},
 	providers: [
 		GoogleProvider({
