@@ -14,11 +14,13 @@ const CommentCard = ({ comment }) => {
 						sizes="100vw"
 						alt="authorAvatar"
 					/>
-					<div className="text-sm md:text-base">{comment.author.username}</div>
+					<div className="text-sm xs:text-base">{comment.author.username}</div>
 				</div>
-				<div className="text-sm md:text-base">{formatTime(comment.createdAt)}</div>
+				<div className="text-xs xs:text-sm md:text-base">
+					{formatTime(comment.createdAt)}
+				</div>
 			</div>
-			<p className="pt-2 text-gray-600 text-sm whitespace-pre-wrap md:text-base md:pt-3 ">
+			<p className="pt-4 text-gray-600 text-sm whitespace-pre-wrap xs:text-base md:pt-3 ">
 				{comment.content}
 			</p>
 		</div>

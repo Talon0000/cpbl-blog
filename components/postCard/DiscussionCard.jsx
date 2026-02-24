@@ -15,7 +15,7 @@ const DiscussionCard = async ({ discussion }) => {
 		<Link
 			href={`/posts/${discussion._id}`}
 			className="rounded-lg shadow-lg w-full text-white bg-slate-700 p-4 hover:scale-105 transition-transform duration-200">
-			<h1 className="mb-2 text-lg md:text-2xl tracking-wide font-semibold">
+			<h1 className="mb-2 text-base xs:text-lg md:text-xl tracking-wide font-semibold">
 				<span className="text-orange-300">[討論]</span> {discussion.title}
 			</h1>
 			{discussion.commentsCount >= 3 && (
@@ -26,7 +26,7 @@ const DiscussionCard = async ({ discussion }) => {
 
 			<div className="flex justify-between items-end -mt-2">
 				<div>
-					<p className="mt-4 text-sm md:text-base text-gray-300">
+					<p className="mt-4 mb-1 text-sm md:text-base text-gray-300">
 						{discussion.author.username}
 					</p>
 					<p className="text-gray-300 text-sm sm:text-base lg:text-lg">

@@ -54,7 +54,7 @@ const ProfileDiscussionCard = async ({ discussion }) => {
 			<div className="flex justify-end space-x-1">
 				<Link
 					href={`/posts/${discussion._id}/edit`}
-					className="flex items-center space-x-1 bg-emerald-500 hover:bg-emerald-600 text-white text-sm md:text-xs lg:text-sm px-2 py-1 rounded-lg">
+					className="flex items-center space-x-1 bg-emerald-500 hover:bg-emerald-600 text-white text-xs xs:text-sm md:text-xs lg:text-sm px-2 py-1 rounded-lg">
 					<FaEdit />
 					<span>編輯</span>
 				</Link>

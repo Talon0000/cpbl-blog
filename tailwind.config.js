@@ -10,6 +10,11 @@ module.exports = {
 			fontFamily: {
 				sans: ["Noto Sans TC", "sans-serif"],
 			},
+			screens: {
+				xxs: "480px",
+				xs: "560px",
+				"3xl": "1600px",
+			},
 		},
 	},
 	plugins: [],

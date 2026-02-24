@@ -32,7 +32,7 @@ const DiscussionsSearchResults = async ({ query, discussionPage }) => {
 				{discussions.length === 0 ? (
 					<p className="text-center lg:text-lg mt-6">查無搜尋結果</p>
 				) : (
-					<div className="max-w-3xl mx-auto px-10 py-6">
+					<div className="max-w-3xl mx-auto xs:px-6 sm:px-10 py-6">
 						<div className="flex flex-col space-y-4">
 							{discussions.map((discussion) => (
 								<DiscussionCard key={discussion._id} discussion={discussion} />

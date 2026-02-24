@@ -13,7 +13,7 @@ const CommentsList = async ({ postId, commentPage }) => {
 	const comments = converToSerializableObject(commentsDocs);
 
 	return (
-		<div className="flex flex-col w-3/4 md:w-2/3 space-y-4 mt-6 mb-16 ">
+		<div className="flex flex-col w-full md:w-2/3 space-y-4 mt-6 mb-16 px-[10%] xs:px-[14%] sm:px-[14%] md:px-0 ">
 			{/* Comment Card */}
 			{comments.length > 0 ? (
 				comments.map((comment) => (

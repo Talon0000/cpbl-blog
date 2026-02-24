@@ -11,14 +11,14 @@ const MainContent = async ({ post }) => {
 
 	return (
 		<section className="max-w-7xl mx-auto px-4 md:px-10 py-6 mb-10">
-			<h1 className="text-4xl  text-center md:text-left py-4 border-b-2 mb-10">
+			<h1 className="text-3xl xs:text-4xl text-center md:text-left py-4 border-b-2 mb-10">
 				{post.type === "news" ? (
 					<Link href="/posts#newsPage-section">賽事新聞</Link>
 				) : (
 					<Link href="/posts#discussionPage-section">討論區</Link>
 				)}
 			</h1>
-			<h2 className="text-2xl md:text-3xl text-green-800 text-center md:text-left pb-4 tracking-wide border-b border-b-gray-300">
+			<h2 className="text-2xl xs:text-3xl md:text-3xl text-green-800 text-center md:text-left pb-4 tracking-wide border-b border-b-gray-300">
 				{post.title}
 			</h2>
 			<div className="flex flex-col items-center md:items-start mb-4">
@@ -30,33 +30,25 @@ const MainContent = async ({ post }) => {
 						className="rounded-full"
 						alt="authorAvatar"
 					/>
-					<div className="text-xl">{post.author.username}</div>
+					<div className="text-lg xs:text-xl">{post.author.username}</div>
 				</div>
-				<div className="pt-3 pb-2 text-gray-400 font-semibold">
+				<div className="pt-3 pb-2 text-sm xs:text-base text-gray-400 font-semibold">
 					{formatTime(post.createdAt)}
 				</div>
 			</div>
 			{post.type === "news" && (
-				<Image
-					src={post.images[0] || defaultImage}
-					width={0}
-					height={0}
-					sizes="100vw"
-					alt="postImage"
-					className="w-full"
-				/>
+				<div className="relative w-full aspect-[16/9]">
+					<Image
+						src={post.images[0] || defaultImage}
+						width={0}
+						height={0}
+						sizes="100vw"
+						fill
+						alt="postImage"
+						className="object-cover"
+					/>
+				</div>
 			)}
-
-			{/* {post.type === "discussion" && post.images.length > 0 ? (
-				<Image
-					src={post.images[0] || defaultImage}
-					width={0}
-					height={0}
-					sizes="100vw"
-					alt="postImage"
-					className="w-full"
-				/>
-			) : null} */}
 
 			{post.type === "discussion" && post.images.length > 1 ? (
 				<div className=" grid grid-cols-1 sm:grid-cols-2 gap-2 my-6">

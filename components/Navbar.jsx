@@ -43,7 +43,7 @@ const Navbar = () => {
 
 	return (
 		<nav className="border-b border-green-50 text-white bg-green-900">
-			<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-4">
+			<div className="max-w-full mx-auto px-2 sm:px-6 lg:px-14  py-4">
 				<div className="relative flex items-center">
 					{/* <!-- Hamburger Button --> */}
 					<div className="absolute left-1 md:hidden">

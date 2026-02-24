@@ -11,7 +11,7 @@ const ProfileNewsCard = ({ news }) => {
 			<div className="flex flex-col items-center xl:flex-row ">
 				<Link
 					href={`/posts/${news._id}`}
-					className="w-[400px] sm:w-[400px] md:w-[300px] lg:w-[450px] xl:w-[350px] aspect-[16/9] relative overflow-hidden transition-all duration-200">
+					className="w-[100%] sm:w-[450px] md:w-[300px] lg:w-[450px] xl:w-[350px] aspect-[16/9] relative overflow-hidden transition-all duration-200">
 					<Image
 						src={news.images[0] || defaultImage}
 						alt="News-Image"
@@ -23,23 +23,23 @@ const ProfileNewsCard = ({ news }) => {
 
 			<div className="flex flex-col items-start space-y-1 xl:justify-between w-full">
 				<Link href={`/posts/${news._id}`}>
-					<h3 className="text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-xl tracking-wide hover:text-gray-500">
+					<h3 className="text-lg xs:text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-xl tracking-wide hover:text-gray-500">
 						{news.title}
 					</h3>
 				</Link>
 				<div className="flex justify-between w-full ">
 					<div className="flex flex-col items-start space-y-1">
-						<span className="pt-4 md:text-base lg:text-lg xl:text-base">
+						<span className="pt-4 lg:text-lg xl:text-base">
 							{news.author.username}
 						</span>
-						<span className="text-green-800 font-semibold md:text-sm lg:text-base xl:text-sm">
+						<span className="text-green-800 font-semibold text-sm xs:text-base md:text-sm lg:text-base xl:text-sm">
 							{formatted(news.createdAt)}
 						</span>
 					</div>
 					<div className="flex items-end space-x-1">
 						<Link
 							href={`/posts/${news._id}/edit`}
-							className="flex items-center space-x-1 bg-emerald-500 hover:bg-emerald-600 text-white text-sm md:text-xs lg:text-sm px-2 py-1 rounded-lg">
+							className="flex items-center space-x-1 bg-emerald-500 hover:bg-emerald-600 text-white text-xs xs:text-sm md:text-xs lg:text-sm px-2 py-1 rounded-lg">
 							<FaEdit />
 							<span>編輯</span>
 						</Link>

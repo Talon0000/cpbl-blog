@@ -31,7 +31,7 @@ const CommentForm = ({ postId }) => {
 
 	return (
 		<form action={formAction} onSubmit={() => setComment("")}>
-			<div className="flex justify-center items-center space-x-2 mb-6  py-2">
+			<div className="flex justify-center items-center space-x-2 mb-6 py-2">
 				<TextAutoSize
 					value={comment}
 					onChange={(e) => {
@@ -40,7 +40,7 @@ const CommentForm = ({ postId }) => {
 					maxRows={4}
 					required
 					placeholder="分享你的看法吧！"
-					className="rounded-md w-[24rem] px-3 py-1 border-2 border-gray-400 resize-none focus:outline-none focus:border-none focus:ring-2 focus:ring-green-700"></TextAutoSize>
+					className="rounded-md w-[16rem] xs:w-[18rem] sm:w-[20rem] md:w-[24rem] px-3 py-1 border-2 border-gray-400 resize-none focus:outline-none focus:border-none focus:ring-2 focus:ring-green-700"></TextAutoSize>
 				<input type="hidden" name="comment" value={comment} />
 
 				{formState?.error && <p className="text-red-500 mt-1">*{formState.error}</p>}

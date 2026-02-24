@@ -63,7 +63,7 @@ export default function ProfileDeleteButton({ post }) {
 
 	return (
 		<button
-			className="flex items-center space-x-1 bg-red-500 hover:bg-red-600 text-white text-sm md:text-xs lg:text-sm px-2 py-1 rounded-lg disabled:bg-red-400 disabled:cursor-not-allowed"
+			className="flex items-center space-x-1 bg-red-500 hover:bg-red-600 text-white text-xs xs:text-sm md:text-xs lg:text-sm px-2 py-1 rounded-lg disabled:bg-red-400 disabled:cursor-not-allowed"
 			type="button"
 			disabled={isDeleting}
 			onClick={handleDeletePost}>

@@ -16,8 +16,8 @@ const ProfileLayout = ({ news, discussions }) => {
 	return (
 		<section className="bg-emerald-50">
 			<div className="container m-auto py-24">
-				<div className="bg-white px-6 py-8 rounded-md shadow-md border m-4 md:m-0">
-					<h1 className="text-4xl mb-4 text-slate-700 text-center md:text-left">
+				<div className="bg-white px-0 py-8 xs:px-6 rounded-md shadow-md border m-4 md:m-0">
+					<h1 className="text-3xl xs:text-4xl mb-4 text-slate-700 text-center md:text-left">
 						個人檔案
 					</h1>
 					<div className="flex flex-col md:flex-row">
@@ -32,11 +32,11 @@ const ProfileLayout = ({ news, discussions }) => {
 									className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 mx-auto md:mx-0 rounded-full"
 								/>
 							</div>
-							<h2 className="text-center text-gray-600 md:text-left mb-4 text-2xl md:text-xl lg:text-2xl">
+							<h2 className="text-center text-gray-600 md:text-left mb-4 text-xl xs:text-2xl md:text-xl lg:text-2xl">
 								<span className="">姓名: </span>
 								{sessionUser?.user?.name}
 							</h2>
-							<h2 className="text-center text-gray-600 md:text-left mb-10 text-2xl md:text-xl lg:text-2xl">
+							<h2 className="text-center text-gray-600 md:text-left mb-10 text-xl xs:text-2xl md:text-xl lg:text-2xl">
 								<span className="">Email: </span>
 								{sessionUser?.user?.email}
 							</h2>

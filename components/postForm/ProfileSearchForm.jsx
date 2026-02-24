@@ -49,21 +49,21 @@ const ProfileSearchForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="flex flex-col px-3 py-4 md:px-0 space-y-4">
+			className="flex flex-col items-center p-0 xs:px-3 xs:py-4 md:px-0 space-y-4">
 			<h3 className="text-xl text-center md:text-lg lg:text-left text-gray-600 ">
 				選擇日期範圍
 			</h3>
-			<div className="flex justify-evenly border border-emerald-700 px-3 py-1 rounded-md md:flex-col lg:flex-row md:w-full md:items-center">
+			<div className="flex justify-evenly border border-emerald-700 px-3 py-1 w-full xxs:w-[80%] rounded-md md:flex-col lg:flex-row md:w-full md:items-center">
 				<input
 					type="date"
-					className="text-lg sm:text-xl md:text-lg focus:outline-none"
+					className="text-base xs:text-lg sm:text-xl md:text-lg focus:outline-none"
 					onChange={handleChange}
 					name="startDate"
 				/>
 				～
 				<input
 					type="date"
-					className="text-lg sm:text-xl md:text-lg focus:outline-none"
+					className="text-base xs:text-lg sm:text-xl md:text-lg focus:outline-none"
 					onChange={handleChange}
 					name="endDate"
 				/>
@@ -72,7 +72,7 @@ const ProfileSearchForm = () => {
 			<h3 className="text-xl text-center pt-4 py-2 md:text-lg lg:text-left text-gray-600">
 				選擇貼文類型
 			</h3>
-			<div className="flex flex-col sm:flex-row md:flex-col w-full text-center space-y-3 sm:space-y-0 sm:space-x-3 md:space-y-2 md:space-x-0">
+			<div className="flex flex-col sm:flex-row md:flex-col w-full xxs:w-[80%] text-center space-y-3 sm:space-y-0 sm:space-x-3 md:space-y-2 md:space-x-0">
 				<select
 					name="type"
 					className="w-full px-3 pl-6 py-1 rounded-md text-lg  text-center border border-emerald-700 focus:outline-none"

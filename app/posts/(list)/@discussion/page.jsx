@@ -15,11 +15,13 @@ const DiscussionPage = async ({ searchParams }) => {
 	const discussionPosts = converToSerializableObject(discussionDocs);
 
 	return (
-		<section id="discussionPage-section" className="max-w-3xl mx-auto px-10 py-6">
+		<section
+			id="discussionPage-section"
+			className="max-w-3xl mx-auto px-4 sm:px-10 py-6">
 			<h2 className="text-3xl md:text-4xl text-center py-4 border-b-2 mb-6">
 				討論區
 			</h2>
-			<div className="flex flex-col space-y-4 px-4 sm:px-10 lg:px-0">
+			<div className="flex flex-col space-y-4 px-2 xs:px-10 lg:px-0">
 				{discussionPosts.length > 0 ? (
 					discussionPosts.map((discussionPost) => (
 						<DiscussionCard key={discussionPost._id} discussion={discussionPost} />

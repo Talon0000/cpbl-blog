@@ -28,7 +28,7 @@ const ProfileDiscussions = async ({ searchParams }) => {
 			) : (
 				<>
 					<div
-						className="flex flex-col mx-4 sm:mx-10 md:mx-0 lg:mx-8 xl:mx-16 2xl:mx-28 space-y-2 px-2 sm:px-4 md:px-0 xl:px-12"
+						className="flex flex-col mx-0 sm:mx-10 md:mx-0 lg:mx-8 xl:mx-16 2xl:mx-28 space-y-2 px-2 sm:px-4 md:px-0 xl:px-12"
 						id="profileDiscussions">
 						{discussions.map((discussion) => (
 							<ProfileDiscussionCard key={discussion._id} discussion={discussion} />
