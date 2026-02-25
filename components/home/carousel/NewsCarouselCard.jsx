@@ -18,18 +18,18 @@ const NewsCarouselCard = ({ post }) => {
 					/>
 				</div>
 
-				<div className="flex flex-col px-6 py-4 pb-6 space-y-2">
+				<div className="flex flex-col px-6 py-4 pb-4 xs:pb-6 space-y-2">
 					<h1 className="font-semibold text-lg sm:text-2xl md:tracking-wide lg:text-3xl ">
 						{post.title}
 					</h1>
 					{/* 時間 */}
 					<div className="flex flex-col items-start sm:flex-row sm:items-center justify-between pt-4">
-						<p className="text-gray-400 text-base pb-2 sm:pb-0 sm:text-lg md:text-xl">
+						<p className="text-gray-400 text-sm xs:text-base pb-2 sm:pb-0 sm:text-lg md:text-xl">
 							作者: {post.author.username}
 						</p>
 
 						<p className="text-gray-400 text-sm sm:text-base md:text-lg">
-							貼文日期: {formatted(post.createdAt)}
+							日期: {formatted(post.createdAt)}
 						</p>
 					</div>
 				</div>
