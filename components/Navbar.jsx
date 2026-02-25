@@ -102,16 +102,18 @@ const Navbar = () => {
 					</div>
 					{/* Right side menu (logged out)*/}
 					{!session && (
-						<div className="absolute right-1 flex items-center ">
+						<div className="absolute right-0 xs:right-1 flex items-center ">
 							{providers &&
 								Object.values(providers).map((provider, index) => (
 									<button
 										key={index}
 										onClick={() => signIn(provider.id)}
 										type="button"
-										className=" flex items-center bg-gray-700 rounded-lg px-3 py-2 hover:bg-gray-400 ">
+										className=" flex w-18 xs:w-full items-center bg-gray-700 rounded-lg px-3 py-2 hover:bg-gray-400 ">
 										<FaGoogle className="mr-1" />
-										<span className="tracking-wider">註冊 或 登入</span>
+										<span className="text-xs xs:text-base tracking-wider">
+											註冊 或 登入
+										</span>
 									</button>
 								))}
 						</div>
