@@ -15,6 +15,7 @@ const NewsCard = ({ news }) => {
 						alt="News-Image"
 						className="object-cover hover:scale-105 hover:opacity-60 transition-transform duration-300"
 						fill
+						priority
 					/>
 				</Link>
 			</div>

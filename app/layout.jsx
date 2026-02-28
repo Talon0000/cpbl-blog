@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<AuthProvider>
-			<html className={notosans.className}>
+			<html className={notosans.className} lang="zh-Hant">
 				<body>
 					<Navbar />
 					<main className="min-h-screen">{children}</main>

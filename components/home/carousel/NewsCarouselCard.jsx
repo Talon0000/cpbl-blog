@@ -24,7 +24,7 @@ const NewsCarouselCard = ({ post }) => {
 					</h1>
 					{/* 時間 */}
 					<div className="flex flex-col items-start sm:flex-row sm:items-center justify-between pt-4">
-						<p className="text-gray-400 text-sm xs:text-base pb-2 sm:pb-0 sm:text-lg md:text-xl">
+						<p className="text-gray-400 text-sm xs:text-base sm:text-lg md:text-xl pb-2 sm:pb-0">
 							作者: {post.author.username}
 						</p>
 

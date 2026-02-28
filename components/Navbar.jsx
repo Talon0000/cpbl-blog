@@ -67,6 +67,7 @@ const Navbar = () => {
 								alt="logo"
 								width={100}
 								height={100}
+								priority
 							/>
 							<span className="hidden md:block tracking-wider text-4xl font-semibold text-gray-50 ">
 								CPBL社群平台
