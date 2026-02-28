@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
 import { ToastContainer, Bounce } from "react-toastify";
-//import "react-toastify/dist/ReactToastify.css";
 
 // export const dynamic = "force-dynamic";
 
@@ -24,9 +23,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<AuthProvider>
-			<html className={notosans.className} lang="zh-Hant">
-				<body>
+		<html className={notosans.className} lang="zh-Hant">
+			<body>
+				<AuthProvider>
 					<Navbar />
 					<main className="min-h-screen">{children}</main>
 					<Footer />
@@ -42,8 +41,8 @@ export default function RootLayout({ children }) {
 						theme="colored"
 						transition={Bounce}
 					/>
-				</body>
-			</html>
-		</AuthProvider>
+				</AuthProvider>
+			</body>
+		</html>
 	);
 }
