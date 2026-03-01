@@ -23,10 +23,10 @@ const Pagination = ({ queryKey, totalPages, pageGroupSize, toSection = false }) 
 	const [isHover, setIsHover] = useState(null);
 
 	const buildSearchParams = (pageNumber) => {
+		// 建立一個可以修改 queryParam的版本
 		const params = new URLSearchParams(searchParams.toString());
 		params.set(queryKey, pageNumber);
 
-		// const fragment = toSection ? `#${queryKey}-section` : "";
 		return `${pathName}?${params.toString()}${toSection ? `#${toSection}` : ""}`;
 	};
 

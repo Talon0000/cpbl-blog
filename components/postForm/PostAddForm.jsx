@@ -48,9 +48,7 @@ const PostAddForm = () => {
 			toast.success(`${savedPost.type === "news" ? "新聞" : "討論"}新增成功！`);
 		} catch (error) {
 			console.error("新增文章失敗: ", error);
-			toast.error(
-				`${savedPost.type === "news" ? "新聞" : "討論"}新增失敗，請稍後再試！`
-			);
+			toast.error("新增失敗，請稍後再試！");
 		} finally {
 			setIsSubmitting(false);
 		}

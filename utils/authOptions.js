@@ -25,6 +25,7 @@ export const authOptions = {
 	],
 	callbacks: {
 		// Invoked on successful sign in
+		// profile: google回傳的原始JSON資料 {sub, name, email, picture, email_verified, locale}
 		async signIn({ profile }) {
 			// 1.Connect to the database
 			await connectDB();
@@ -45,9 +46,11 @@ export const authOptions = {
 			return true;
 		},
 
+		//這邊的 user則是 Next Auth收到 google資料後過濾後的 object {id, name, email, image}
 		async jwt({ token, user }) {
 			await connectDB();
 
+			// 用 user.email去資料庫找該名用戶的資料，並將他們放入token裡 (登入才有值，後續重新整理不會有 user)
 			if (user) {
 				const dbUser = await User.findOne({ email: user.email });
 
@@ -60,6 +63,9 @@ export const authOptions = {
 		},
 
 		async session({ session, token }) {
+			// token：這是從加密 Cookie 解密出來的內容
+			// session：準備給前端的物件
+
 			session.user.id = token.id;
 			session.user.username = token.username;
 			session.user.email = token.email;

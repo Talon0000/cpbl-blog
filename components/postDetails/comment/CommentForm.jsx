@@ -13,7 +13,7 @@ const CommentForm = ({ postId }) => {
 		success: false,
 	});
 
-	// 轉換function
+	// wrapper function
 	async function actionWithPostId(prevState, formData) {
 		return await addComment(prevState, formData, postId);
 	}
