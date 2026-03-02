@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
 			<body>
 				<AuthProvider>
 					<Navbar />
-					<main className="min-h-screen">{children}</main>
+					<main>{children}</main>
 					<Footer />
 					<ToastContainer
 						position="top-right"
